@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Store</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Flowbite for Carousel -->
+  <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+  <!-- DaisyUI Plugin -->
+  <script>
+    tailwind.config = {
+      plugins: [require('daisyui')],
+      daisyui: { themes: ['light'] }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-green-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center text-white font-bold text-xl">
+          <i class="fas fa-shopping-basket mr-2"></i>Greens & Grains
+        </a>
+        <!-- Menu -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#" class="text-white hover:text-green-300">Home</a>
+          <a href="#products" class="text-white hover:text-green-300">Products</a>
+          <a href="#about" class="text-white hover:text-green-300">About</a>
+          <a href="#contact" class="text-white hover:text-green-300">Contact</a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button class="mobile-menu-button text-white focus:outline-none">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden bg-green-600 md:hidden">
+      <a href="#" class="block px-4 py-2 text-white">Home</a>
+      <a href="#products" class="block px-4 py-2 text-white">Products</a>
+      <a href="#about" class="block px-4 py-2 text-white">About</a>
+      <a href="#contact" class="block px-4 py-2 text-white">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Carousel / Sliding Banners -->
+  <div id="grocery-carousel" class="relative w-full" data-carousel="slide">
+    <div class="relative w-full h-[400px] overflow-hidden rounded-lg mt-6 shadow-lg">
+      <!-- Slide 1 -->
+      <div class="duration-700 ease-in-out" data-carousel-item="active">
+      <img src="b1.png" alt="Fresh Fruits" class="block w-full object-cover">
+      </div>
+      <!-- Slide 2 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="b2.png" alt="Organic Vegetables" class="block w-full object-cover">
+      </div>
+      <!-- Slide 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="b3.png" alt="Dairy Delights" class="block w-full object-cover">
+      </div>
+    </div>
+    <!-- Controls -->
+    <button data-carousel-prev class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full focus:outline-none shadow-md">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button data-carousel-next class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/50 hover:bg-white p-2 rounded-full focus:outline-none shadow-md">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- Products Section -->
+  <section id="products" class="max-w-6xl mx-auto p-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10">
+    <!-- Example Product Card -->
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <img src="p1.png" alt="Apple" class="mx-auto h-36 object-cover">
+      <h3 class="text-lg font-semibold mt-4 text-center">Fresh Apples</h3>
+      <p class="mt-2 text-green-700 font-bold text-center">$3.99 / kg</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <img src="p2.png" alt="Tomatoes" class="mx-auto h-36 object-cover">
+      <h3 class="text-lg font-semibold mt-4 text-center">Organic Tomatoes</h3>
+      <p class="mt-2 text-green-700 font-bold text-center">$2.49 / kg</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <img src="p3.jpg" alt="Milk" class="mx-auto h-36 object-cover">
+      <h3 class="text-lg font-semibold mt-4 text-center">Dairy Milk</h3>
+      <p class="mt-2 text-green-700 font-bold text-center">$1.20 / L</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <img src="p4.jpg" alt="Bread" class="mx-auto h-36 object-cover">
+      <h3 class="text-lg font-semibold mt-4 text-center">Wholegrain Bread</h3>
+      <p class="mt-2 text-green-700 font-bold text-center">$2.00 / loaf</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10">
+    <h2 class="text-2xl font-bold mb-4">About Greens & Grains</h2>
+    <p class="text-gray-700">At Greens & Grains, we are committed to providing the freshest and highest quality grocery items. From farm to your table, our mission is to make healthy eating accessible to everyone.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="max-w-3xl mx-auto p-6 bg-white mt-10 shadow-lg rounded-lg">
+    <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
+    <form class="space-y-4">
+      <div>
+        <label class="block text-gray-700">Name</label>
+        <input type="text" class="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500" placeholder="Your Name">
+      </div>
+      <div>
+        <label class="block text-gray-700">Email</label>
+        <input type="email" class="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500" placeholder="you@example.com">
+      </div>
+      <div>
+        <label class="block text-gray-700">Message</label>
+        <textarea class="w-full border border-gray-300 p-2 rounded focus:ring-2 focus:ring-green-500" rows="4" placeholder="Your Message"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800 transition">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white text-center py-6 mt-10">
+    <p>© 2025 Greens & Grains. All rights reserved.</p>
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const btn = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  </script>
+
+</body>
+
+</html>
